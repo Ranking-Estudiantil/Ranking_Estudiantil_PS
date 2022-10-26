@@ -1,0 +1,37 @@
+﻿@model Ranking_Estudiantil.Models.Faculty
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<body style="background-color: #232323;">
+    <div>
+        <div align="center">
+            <h1 style="color:white;">Eliminar</h1>
+            <h3 style="color:white;">Estas seguro de eliminar este registro?</h3>
+            <h4 style="color:white;">Facultades</h4>
+        </div>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FacultyName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FacultyName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.academicUnity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.academicUnity.AcademicUnityName)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="FacultyID" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <a asp-action="Index">Volver a la lista</a>
+        </form>
+    </div>
+</body>
+

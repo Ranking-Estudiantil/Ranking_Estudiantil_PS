@@ -19,6 +19,206 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxBcmVhc1xJZGVudGl0eVxQYWdlc1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/AcademicUnities/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xBY2FkZW1pY1VuaXRpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/AcademicUnities/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xBY2FkZW1pY1VuaXRpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/AcademicUnities/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xBY2FkZW1pY1VuaXRpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/AcademicUnities/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xBY2FkZW1pY1VuaXRpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/AcademicUnities/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xBY2FkZW1pY1VuaXRpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Careers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xDYXJlZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Careers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xDYXJlZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Careers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xDYXJlZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Careers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xDYXJlZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Careers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xDYXJlZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Departments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xEZXBhcnRtZW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Departments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xEZXBhcnRtZW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Departments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xEZXBhcnRtZW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Departments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xEZXBhcnRtZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Departments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xEZXBhcnRtZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Edit1/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xFZGl0MVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Faculties/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xGYWN1bHRpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Faculties/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xGYWN1bHRpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Faculties/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xGYWN1bHRpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Faculties/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xGYWN1bHRpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Faculties/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xGYWN1bHRpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xIb21lXFByaXZhY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xMb2dpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/People/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQZW9wbGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/People/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQZW9wbGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/People/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQZW9wbGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/People/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQZW9wbGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/People/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQZW9wbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Professors/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQcm9mZXNzb3JzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Professors/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQcm9mZXNzb3JzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Professors/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQcm9mZXNzb3JzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Professors/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQcm9mZXNzb3JzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Professors/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xQcm9mZXNzb3JzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTaGFyZWRcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTaGFyZWRcX0xvZ2luUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Bronze.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xCcm9uemUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Diamond.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xEaWFtb25kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Gold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xHb2xkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Platinum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xQbGF0aW51bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Students/Silver.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTdHVkZW50c1xTaWx2ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Views/AcademicUnities/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVtaWNVbml0aWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -214,6 +414,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Ranking_Estudiantil/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UmFua2luZ19Fc3R1ZGlhbnRpbFxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-y5n6z54pbt
 
 [C:/Repository/Ranking_Estudiantil/Ranking_Estudiantil/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
