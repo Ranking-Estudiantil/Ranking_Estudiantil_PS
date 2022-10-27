@@ -36,10 +36,20 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <body style="background-color: #232323;">
     <table class="table table-bordered" style="background-color: #232323; color:white; border: 4px solid;">
         <thead>
             <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PeronStud.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PeronStud.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PeronStud.SecondLastName)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Rank)
                 </th>
@@ -49,6 +59,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.career)
                 </th>
+
                 <th></th>
             </tr>
         </thead>
@@ -57,24 +68,53 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Rank)
+                        @Html.DisplayFor(modelItem => item.PeronStud.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PeronStud.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PeronStud.SecondLastName)
+                    </td>
+                    <td>
+                        @switch (item.Rank)
+                        {
+                            case 1:
+                                <p>Bronce</p>
+                                break;
+                            case 2:
+                                <p>Plata</p>
+                                break;
+                            case 3:
+                                <p>Oro</p>
+                                break;
+                            case 4:
+                                <p>Platino</p>
+                                break;
+                            case 5:
+                                <p>Diamante</p>
+                                break;
+                        }
+
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Score)
                     </td>
-
-
                     <td>
                         @Html.DisplayFor(modelItem => item.career.CareerName)
                     </td>
+
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.PersonID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.PersonID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.PersonID">Delete</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    <div>
+        <a class="btn btn-dark" href="/Edit1/Index">Regresar</a>
+    </div>
 </body>
 

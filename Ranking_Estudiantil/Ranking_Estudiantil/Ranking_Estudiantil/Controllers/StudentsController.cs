@@ -22,16 +22,18 @@ namespace Ranking_Estudiantil.Controllers
         // GET: Students
         public async Task<IActionResult> Bronze()
         {
-            IQueryable<Student> student = from Student in _context.Students
+           
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud).Include(c => c.career)
                                           where Student.Rank == 1
                                           select Student;
-                                        
+
 
             return View(await student.ToListAsync());
         }
         public async Task<IActionResult> Silver()
         {
-            IQueryable<Student> student = from Student in _context.Students
+           
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud).Include(c => c.career)
                                           where Student.Rank == 2
                                           select Student;
 
@@ -40,7 +42,7 @@ namespace Ranking_Estudiantil.Controllers
         }
         public async Task<IActionResult> Gold()
         {
-            IQueryable<Student> student = from Student in _context.Students
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud).Include(c => c.career)
                                           where Student.Rank == 3
                                           select Student;
 
@@ -49,7 +51,7 @@ namespace Ranking_Estudiantil.Controllers
         }
         public async Task<IActionResult> Platinum()
         {
-            IQueryable<Student> student = from Student in _context.Students
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud).Include(c => c.career)
                                           where Student.Rank == 4
                                           select Student;
 
@@ -58,7 +60,8 @@ namespace Ranking_Estudiantil.Controllers
         }
         public async Task<IActionResult> Diamond()
         {
-            IQueryable<Student> student = from Student in _context.Students
+           
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud).Include(c => c.career)
                                           where Student.Rank == 5
                                           select Student;
 
@@ -67,7 +70,7 @@ namespace Ranking_Estudiantil.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Students.Include(s => s.career);
+            var applicationDbContext = _context.Students.Include(s => s.PeronStud).Include(s => s.career);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -80,8 +83,9 @@ namespace Ranking_Estudiantil.Controllers
             }
 
             var student = await _context.Students
+                .Include(s => s.PeronStud)
                 .Include(s => s.career)
-                .FirstOrDefaultAsync(m => m.StudentID == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (student == null)
             {
                 return NotFound();
@@ -93,6 +97,7 @@ namespace Ranking_Estudiantil.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
+            ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName");
             ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName");
             return View();
         }
@@ -102,7 +107,7 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Rank,Score,CareerID")] Student student)
+        public async Task<IActionResult> Create([Bind("PersonID,Rank,Score,CareerID")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -110,6 +115,7 @@ namespace Ranking_Estudiantil.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName", student.PersonID);
             ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", student.CareerID);
             return View(student);
         }
@@ -127,6 +133,7 @@ namespace Ranking_Estudiantil.Controllers
             {
                 return NotFound();
             }
+            ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName", student.PersonID);
             ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", student.CareerID);
             return View(student);
         }
@@ -136,9 +143,9 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentID,Rank,Score,CareerID")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("PersonID,Rank,Score,CareerID")] Student student)
         {
-            if (id != student.StudentID)
+            if (id != student.PersonID)
             {
                 return NotFound();
             }
@@ -147,12 +154,32 @@ namespace Ranking_Estudiantil.Controllers
             {
                 try
                 {
+                    short newScore;
+                    newScore = short.Parse(Request.Form["newScore"]);
+                    student.Score = (short)(student.Score + newScore);
+                    if(student.Rank == 1 && student.Score> 200)
+                    {
+                        student.Rank = 2;
+                        student.Score = 0;
+                    }else if (student.Rank == 2 && student.Score > 200){
+                        student.Rank = 3;
+                        student.Score = 0;
+                    }else if(student.Rank == 3 && student.Score > 200)
+                    {
+                        student.Rank = 4;
+                        student.Score = 0;
+                    }else if(student.Rank == 4 && student.Score > 200)
+                    {
+                        student.Rank = 5;
+                        student.Score = 0;
+                    }
+                 
                     _context.Update(student);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.StudentID))
+                    if (!StudentExists(student.PersonID))
                     {
                         return NotFound();
                     }
@@ -163,6 +190,7 @@ namespace Ranking_Estudiantil.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName ", student.PersonID);
             ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", student.CareerID);
             return View(student);
         }
@@ -176,8 +204,9 @@ namespace Ranking_Estudiantil.Controllers
             }
 
             var student = await _context.Students
+                .Include(s => s.PeronStud)
                 .Include(s => s.career)
-                .FirstOrDefaultAsync(m => m.StudentID == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (student == null)
             {
                 return NotFound();
@@ -207,7 +236,7 @@ namespace Ranking_Estudiantil.Controllers
 
         private bool StudentExists(int id)
         {
-          return _context.Students.Any(e => e.StudentID == id);
+          return _context.Students.Any(e => e.PersonID == id);
         }
     }
 }

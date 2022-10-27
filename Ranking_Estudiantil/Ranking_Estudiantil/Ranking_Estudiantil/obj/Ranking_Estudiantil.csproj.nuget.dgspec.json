@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROYECTO EN SISTEMAS REPOSITORIO\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj": {}
+    "D:\\RANKING ESTUDIANTIL PROJECTS\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj": {}
   },
   "projects": {
-    "D:\\PROYECTO EN SISTEMAS REPOSITORIO\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj": {
+    "D:\\RANKING ESTUDIANTIL PROJECTS\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROYECTO EN SISTEMAS REPOSITORIO\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj",
+        "projectUniqueName": "D:\\RANKING ESTUDIANTIL PROJECTS\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj",
         "projectName": "Ranking_Estudiantil",
-        "projectPath": "D:\\PROYECTO EN SISTEMAS REPOSITORIO\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj",
+        "projectPath": "D:\\RANKING ESTUDIANTIL PROJECTS\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\PROYECTO EN SISTEMAS REPOSITORIO\\Ranking_Estudiantil\\Ranking_Estudiantil\\Ranking_Estudiantil\\obj\\",
+        "outputPath": "D:\\RANKING ESTUDIANTIL PROJECTS\\Ranking_Estudiantil\\Ranking_Estudiantil\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,17 +54,17 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

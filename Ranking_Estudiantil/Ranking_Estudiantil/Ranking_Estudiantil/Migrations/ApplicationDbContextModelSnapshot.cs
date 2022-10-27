@@ -154,13 +154,25 @@ namespace Ranking_Estudiantil.Migrations
                     b.ToTable("Person", (string)null);
                 });
 
-            modelBuilder.Entity("Ranking_Estudiantil.Models.Student", b =>
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Professor", b =>
                 {
-                    b.Property<int>("StudentID")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("PersonID")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentID"), 1L, 1);
+                    b.Property<int>("CareerID")
+                        .HasColumnType("int");
+
+                    b.HasKey("PersonID");
+
+                    b.HasIndex("CareerID");
+
+                    b.ToTable("Professor", (string)null);
+                });
+
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Student", b =>
+                {
+                    b.Property<int>("PersonID")
+                        .HasColumnType("int");
 
                     b.Property<int>("CareerID")
                         .HasColumnType("int");
@@ -171,7 +183,7 @@ namespace Ranking_Estudiantil.Migrations
                     b.Property<short>("Score")
                         .HasColumnType("smallint");
 
-                    b.HasKey("StudentID");
+                    b.HasKey("PersonID");
 
                     b.HasIndex("CareerID");
 
@@ -211,6 +223,25 @@ namespace Ranking_Estudiantil.Migrations
                     b.Navigation("academicUnity");
                 });
 
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Professor", b =>
+                {
+                    b.HasOne("Ranking_Estudiantil.Models.Career", "career")
+                        .WithMany()
+                        .HasForeignKey("CareerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ranking_Estudiantil.Models.Person", "Person")
+                        .WithOne("professor")
+                        .HasForeignKey("Ranking_Estudiantil.Models.Professor", "PersonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+
+                    b.Navigation("career");
+                });
+
             modelBuilder.Entity("Ranking_Estudiantil.Models.Student", b =>
                 {
                     b.HasOne("Ranking_Estudiantil.Models.Career", "career")
@@ -218,6 +249,14 @@ namespace Ranking_Estudiantil.Migrations
                         .HasForeignKey("CareerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Ranking_Estudiantil.Models.Person", "PeronStud")
+                        .WithOne("student")
+                        .HasForeignKey("Ranking_Estudiantil.Models.Student", "PersonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PeronStud");
 
                     b.Navigation("career");
                 });
@@ -240,6 +279,13 @@ namespace Ranking_Estudiantil.Migrations
             modelBuilder.Entity("Ranking_Estudiantil.Models.Faculty", b =>
                 {
                     b.Navigation("Departments");
+                });
+
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Person", b =>
+                {
+                    b.Navigation("professor");
+
+                    b.Navigation("student");
                 });
 #pragma warning restore 612, 618
         }

@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Index";
 }
-
 <header>
     <!-- header inner -->
     <div class="header">
@@ -30,12 +29,25 @@
         </div>
     </div>
 </header>
-<h1 style="color:white;">Ranking</h1>
+
 <body style="background-color: #232323;">
+    <h1 style="color:white;">Ranking</h1>
+
     <table class="table table-bordered" style="background-color: #232323; color:white; border: 4px solid;">
         <thead>
             <tr>
-
+                <th>
+                    @Html.DisplayNameFor(model => model.PeronStud.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PeronStud.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PeronStud.SecondLastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.career.CareerName)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Score)
                 </th>
@@ -46,12 +58,23 @@
             @foreach (var item in Model)
             {
                 <tr>
-
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PeronStud.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PeronStud.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PeronStud.SecondLastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.career.CareerName)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Score)
                     </td>
                     <td>
-                        @if (item.Score >= 1 && item.Score <= 100)
+                        @if (item.Score >= 0 && item.Score <= 100)
                         {
                             <img src="~/Images/PlatinoLaureado.png" />
                         }
@@ -65,4 +88,5 @@
         </tbody>
     </table>
 </body>
+
 

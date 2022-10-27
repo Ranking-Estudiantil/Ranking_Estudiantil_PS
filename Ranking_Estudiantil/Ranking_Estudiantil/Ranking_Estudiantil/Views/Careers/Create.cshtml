@@ -4,12 +4,14 @@
     ViewData["Title"] = "Create";
 }
 
-<h1 style="color:white;">Create</h1>
-
-<h4 style="color:white;">Career</h4>
-<hr />
 <body style="background-color: #232323;">
-    <div class="row">
+    <div align="center">
+        <h1 style="color:white;">Create</h1>
+
+        <h4 style="color:white;">Career</h4>
+    </div>
+    <br>
+    <div align="center">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -22,15 +24,15 @@
                     <label asp-for="DepartmentID" class="control-label"></label>
                     <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID"></select>
                 </div>
+                <br>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />
                 </div>
             </form>
         </div>
-    </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
     </div>
 </body>
 
