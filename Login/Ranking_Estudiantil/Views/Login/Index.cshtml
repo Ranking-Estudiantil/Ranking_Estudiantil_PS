@@ -1,0 +1,24 @@
+﻿@model Person
+@{
+    Layout = null;
+}
+
+
+ <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+ <body class="body" >
+
+    <div  class="login-box">
+      <img src="~/Images/logoRanking.png" class="avatar" alt="Avatar Image">
+      <h1>Sesion</h1>
+       <form asp-controller="Login" asp-action="Index" method="POST">
+        <label for="username">Correo</label>
+       <input type="text" asp-for="Email" />
+        <label for="password">Contrasena</label>
+        <input type="password" asp-for="Password" />
+             <input class="btn btn-primary btn-lg btn-block" type="submit" value="Login"></input>
+        <a id="as" href="">¿Olvidaste tu contraseña?</a><br>
+        <a id="as" href="~/People/Create">Register</a><br>
+      </form>
+    </div>
+  </body>

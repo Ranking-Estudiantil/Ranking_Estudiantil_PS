@@ -1,0 +1,27 @@
+﻿.bodyEdit{
+    background: #232323;
+}
+
+#btnEdit {
+    background: #02224c;
+    margin-top: 10px;
+    margin-left: 500px;
+    height: 69px;
+    width: 590px;
+    font-family: Arial;
+    font-size: 22px;
+    border-radius: 10px;
+    color:#fff;
+}
+    #btnEdit:hover {
+        height: 60px;
+        width: 600px;
+        background: #ceab06;
+    }
+.editText{
+    font-family:'Arial Rounded MT';
+    font-weight:bold;
+    color: #fff;
+    text-align:center;
+    margin: 40px 0 40px  0;
+}
