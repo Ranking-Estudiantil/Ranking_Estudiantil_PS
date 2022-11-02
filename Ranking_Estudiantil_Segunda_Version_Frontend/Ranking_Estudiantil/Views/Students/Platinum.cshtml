@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Ranking_Estudiantil.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ranking</h1>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                    @if(item.Score >= 1 && item.Score <= 100)
+                    {
+                        <img src="~/Images/PlatinoLaureado.png"/>
+                    }else if(item.Score >= 100 && item.Score <= 200)
+                    {
+                        <img src="~/Images/Platinox2.png"/>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
