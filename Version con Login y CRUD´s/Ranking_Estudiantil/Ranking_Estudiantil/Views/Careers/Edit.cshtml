@@ -1,0 +1,45 @@
+﻿@model Ranking_Estudiantil.Models.Career
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<body style="background-color: #232323;">
+    <div align="center">
+        <h1 style="color:white;">Edit</h1>
+
+        <h4 style="color:white;">Career</h4>
+    </div>   
+    <br>
+    <div align="center">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="CareerID" />
+                <div class="form-group">
+                    <label asp-for="CareerName" class="control-label"></label>
+                    <input asp-for="CareerName" class="form-control" />
+                    <span asp-validation-for="CareerName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DepartmentID" class="control-label"></label>
+                    <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID"></select>
+                    <span asp-validation-for="DepartmentID" class="text-danger"></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
