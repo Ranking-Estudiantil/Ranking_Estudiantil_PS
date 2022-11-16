@@ -34,14 +34,16 @@ namespace Ranking_Estudiantil.Controllers
 
             if (usuario != null)
             {
+
                 var claims = new List<Claim> {
                     new Claim(ClaimTypes.Name, usuario.FirstName),
                     new Claim("Email",usuario.Email)
+                    
                 };
-                /*foreach (var rol in usuario.IdRol.ToString())
+                foreach (var rol in usuario.Role.ToString())    
                 {
                     claims.Add(new Claim(ClaimTypes.Role.ToString(), rol.ToString()));
-                }*/
+                }
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 

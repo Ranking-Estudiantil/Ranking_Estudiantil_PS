@@ -10,8 +10,11 @@ namespace Ranking_Estudiantil.Models
         [StringLength(50, ErrorMessage = "{0} debe ser minimo de {2} caracteres y maximo {1}", MinimumLength = 3)]
         [Display(Name = "Career Name")]
         public string CareerName { get; set; } = null!;
+        [Required(ErrorMessage = "Debe seleccionar un departamento")]
         public int DepartmentID { get; set; }
+        public byte Status { get; set; }
+        public DateTime RegisterDate { get; set; }
         public Department? Department { get; set; }
-        public ICollection<Student>? Students { get; set; }
+        public ICollection<Person>? People { get; set; }
     }
 }

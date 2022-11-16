@@ -1,0 +1,110 @@
+﻿@model Ranking_Estudiantil.Models.PersonProfessor
+
+@{
+    ViewData["Title"] = "Create";
+}
+<body style="background-color: #232323;">
+    <div align="center">
+        
+
+        <h1 style="color:white;">Administradores</h1>
+    </div>
+    <br>
+    <div align="center">
+        <div class="col-md-4">
+           <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondLastName" class="control-label"></label>
+                <input asp-for="SecondLastName" class="form-control" />
+                <span asp-validation-for="SecondLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcademicUnityID" class="control-label"></label>
+                <select asp-for="AcademicUnityID" class ="form-control" asp-items="ViewBag.AcademicUnityID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CareerID" class="control-label"></label>
+                <select asp-for="CareerID" class ="form-control" asp-items="ViewBag.CareerID"></select>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="RegisterDate" class="control-label"></label>
+                <input asp-for="RegisterDate" class="form-control" />
+                <span asp-validation-for="RegisterDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" class="control-label"></label>
+                <select asp-for="Role">
+                    
+                                
+                     @*@if (User.IsInRole("Administrador general")   )
+                      {
+                         <option value="Administrador general">Administrador general</option>
+                          @if (User.IsInRole("Director de carrera")   )
+                         {
+                         <option value="Director de carrera">Director de carrera</option>
+                         <option value="Docente">Docente</option>
+                         }
+                      }*@
+
+                  @if (SessionClass.role =="Administrador general" )
+                      {
+                         <option value="Administrador general">Administrador general</option>
+                      }
+                       @if (SessionClass.role =="Administrador general" || SessionClass.role =="Director de carrera"    )
+                      {
+                         <option value="Director de carrera">Director de carrera</option>
+                         <option value="Docente">Docente</option>
+                      }
+                 </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        </div>
+        <div>
+            <a asp-action="Index">Volver a la lista</a>
+        </div>
+    </div>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+

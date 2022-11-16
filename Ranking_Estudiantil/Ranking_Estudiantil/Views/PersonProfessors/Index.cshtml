@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Ranking_Estudiantil.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<header>
+    <!-- header inner -->
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <img src="../Images/logoRanking.png"   />
+                                <b  >Unidades Academicas</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<p  style=" text-align:center;margin:auto;padding: 5px;">
+    <a asp-action="Create">Nuevo Registro</a>
+</p>
+<body style="background-color: #232323;">
+    <table class="table-fill" >
+        <thead>
+            <tr>
+                <th class="text-left">
+                    Nombre
+                </th>
+                <th class="text-left">
+                    Apellido Paterno
+                </th>
+                <th class="text-left">
+                    Apellido Materno
+                </th>
+                <th class="text-left">
+                    Rol
+                </th>
+                <th class="text-left">
+                    Correo
+                </th>
+                <th class="text-left">
+                    Carrera
+                </th>
+                <th class="text-left">
+                    Sede
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            @foreach (var item in Model)
+            {
+                <tr>
+                   <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondLastName)
+                        </td>
+                       
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Role)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.career.CareerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.academicUnity.AcademicUnityName)
+                        </td>
+                    <td class="text-left">
+                        <a id="aEdit" asp-controller="people" asp-action="Edit" asp-route-id="@item.PersonID">Editar</a> |
+                        <a id="aDelete" asp-controller="people" asp-action="Delete" asp-route-id="@item.PersonID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="padding:50px">
+        <a    href="/Edit1/Index">Regresar</a>
+    </div>
+</body>

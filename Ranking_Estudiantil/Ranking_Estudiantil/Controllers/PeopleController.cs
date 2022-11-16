@@ -20,9 +20,61 @@ namespace Ranking_Estudiantil.Controllers
         }
 
         // GET: People
+        public async Task<IActionResult> Bronze()
+        {
+
+            IQueryable<Person> people = from Person in _context.People.Include(a => a.student).Include(c=>c.career)
+                                        join Student in _context.Students on Person.PersonID equals Student.PersonID
+                                          where Student.Rank == 1
+                                          select Person;
+
+
+            return View(await people.ToListAsync());
+        }
+        public async Task<IActionResult> Silver()
+        {
+
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud)
+                                          join Person in _context.People on Student.PersonID equals Person.PersonID
+                                          join Career in _context.Careers on Person.CareerID equals Career.CareerID
+                                          where Student.Rank == 2
+                                          select Student;
+
+
+            return View(await student.ToListAsync());
+        }
+        public async Task<IActionResult> Gold()
+        {
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud)
+                                          where Student.Rank == 3
+                                          select Student;
+
+
+            return View(await student.ToListAsync());
+        }
+        public async Task<IActionResult> Platinum()
+        {
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud)
+                                          where Student.Rank == 4
+                                          select Student;
+
+
+            return View(await student.ToListAsync());
+        }
+        public async Task<IActionResult> Diamond()
+        {
+
+            IQueryable<Student> student = from Student in _context.Students.Include(a => a.PeronStud)
+                                          where Student.Rank == 5
+                                          select Student;
+
+
+            return View(await student.ToListAsync());
+        }
         public async Task<IActionResult> Index()
         {
-              return View(await _context.People.ToListAsync());
+            var applicationDbContext = _context.People.Include(p => p.academicUnity).Include(p => p.career);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: People/Details/5
@@ -34,6 +86,8 @@ namespace Ranking_Estudiantil.Controllers
             }
 
             var person = await _context.People
+                .Include(p => p.academicUnity)
+                .Include(p => p.career)
                 .FirstOrDefaultAsync(m => m.PersonID == id);
             if (person == null)
             {
@@ -46,6 +100,8 @@ namespace Ranking_Estudiantil.Controllers
         // GET: People/Create
         public IActionResult Create()
         {
+            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName");
+            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName");
             return View();
         }
 
@@ -54,7 +110,7 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonID,FirstName,LastName,SecondLastName,Status,RegisterDate,Role,Email,Password")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonID,FirstName,LastName,SecondLastName,AcademicUnityID,CareerID,Status,RegisterDate,Role,Email,Username,Password")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +118,8 @@ namespace Ranking_Estudiantil.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", person.AcademicUnityID);
+            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", person.CareerID);
             return View(person);
         }
 
@@ -78,6 +136,8 @@ namespace Ranking_Estudiantil.Controllers
             {
                 return NotFound();
             }
+            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", person.AcademicUnityID);
+            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", person.CareerID);
             return View(person);
         }
 
@@ -86,7 +146,7 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PersonID,FirstName,LastName,SecondLastName,Status,RegisterDate,Role,Email,Password")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("PersonID,FirstName,LastName,SecondLastName,AcademicUnityID,CareerID,Status,RegisterDate,Role,Email,Username,Password")] Person person)
         {
             if (id != person.PersonID)
             {
@@ -95,24 +155,14 @@ namespace Ranking_Estudiantil.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
+               
                     _context.Update(person);
                     await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PersonExists(person.PersonID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", person.AcademicUnityID);
+            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", person.CareerID);
             return View(person);
         }
 
@@ -124,38 +174,38 @@ namespace Ranking_Estudiantil.Controllers
                 return NotFound();
             }
 
-            var person = await _context.People
-                .FirstOrDefaultAsync(m => m.PersonID == id);
+            var person = await _context.People.FindAsync(id);
             if (person == null)
             {
                 return NotFound();
             }
-
+            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", person.AcademicUnityID);
+            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", person.CareerID);
             return View(person);
         }
 
         // POST: People/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id, [Bind("PersonID,FirstName,LastName,SecondLastName,AcademicUnityID,CareerID,Status,RegisterDate,Role,Email,Username,Password")] Person person)
         {
-            if (_context.People == null)
+            if (id != person.PersonID)
             {
-                return Problem("Entity set 'ApplicationDbContext.People'  is null.");
+                return NotFound();
             }
-            var person = await _context.People.FindAsync(id);
-            if (person != null)
-            {
-                _context.People.Remove(person);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
 
-        private bool PersonExists(int id)
-        {
-          return _context.People.Any(e => e.PersonID == id);
+            if (ModelState.IsValid)
+            {
+                person.Status = 0;
+                    _context.Update(person);
+                    await _context.SaveChangesAsync();
+                
+             
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", person.AcademicUnityID);
+            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", person.CareerID);
+            return View(person);
         }
     }
 }

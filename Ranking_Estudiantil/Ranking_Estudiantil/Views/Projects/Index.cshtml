@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Ranking_Estudiantil.Models.Projects>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<header>
+    <!-- header inner -->
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <img src="../Images/logoRanking.png"   />
+                                <b  >Proyectos y logros personales</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<p  style=" text-align:center;margin:auto;padding: 5px;">
+    <a asp-action="Create">Nuevo Registro</a>
+</p>
+<body style="background-color: #232323;">
+    <table class="table-fill" >
+        <thead>
+            <tr>
+                <th class="text-left">
+                    Logro
+                </th>
+                <th class="text-left">
+                    Tipo de logro
+                </th>
+                <th class="text-left">
+                    Puntuacion
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            @foreach (var item in Model)
+            {
+                <tr>
+                     <td>
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.achievment)
+                    </td>
+                   
+                    <td>
+                        @if(item.punctuation == 0.20)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        }else if (item.punctuation == 0.40)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        }else if (item.punctuation == 0.60)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        }else if (item.punctuation == 0.80)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        }else if (item.punctuation == 1)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        }
+                    </td>
+                   
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProjectsID">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProjectsID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="padding:50px">
+        <a    href="/Edit1/Index">Regresar</a>
+    </div>
+</body>
+
+
+
+

@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+
+
 <header>
     <!-- header inner -->
     <div class="header">
@@ -13,7 +16,7 @@
                         <div class="center-desk">
                             <div class="logo">
                                 <img src="../Images/logoRanking.png" alt="#" />
-                                <b>RANKING ESTUDIANTIL</b>
+                                <b>PLATINO</b>
                             </div>
                         </div>
                     </div>
@@ -29,64 +32,69 @@
         </div>
     </div>
 </header>
-
 <body style="background-color: #232323;">
-    <h1 style="color:white;">Ranking</h1>
-
-    <table class="table table-bordered" style="background-color: #232323; color:white; border: 4px solid;">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PeronStud.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PeronStud.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PeronStud.SecondLastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.career.CareerName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Score)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PeronStud.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PeronStud.LastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PeronStud.SecondLastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.career.CareerName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Score)
-                    </td>
-                    <td>
-                        @if (item.Score >= 0 && item.Score <= 100)
-                        {
-                            <img src="~/Images/PlatinoLaureado.png" />
-                        }
-                        else if (item.Score >= 100 && item.Score <= 200)
-                        {
-                            <img src="~/Images/Platinox2.png" />
-                        }
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <table class="table-fill">
+    <thead>
+        <tr>
+            
+            <th class="text-left">
+                Nombre
+            </th>
+            <th class="text-left">
+                Apellido Paterno
+            </th>
+            <th class="text-left">
+                Apellido Materno
+            </th>
+            <th class="text-left">
+                Carrera
+            </th>
+            <th class="text-left">
+               Puntuacion
+            </th>
+             <th class="text-left">
+               Rango
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-hover">
+@foreach (var item in Model) {
+        <tr>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.PeronStud.FirstName)
+            </td>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.PeronStud.LastName)
+            </td class="text-left">
+                   <td>
+                @Html.DisplayFor(modelItem => item.PeronStud.SecondLastName)
+            </td>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.PeronStud.career.CareerName)
+            </td>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td class="text-left">
+                  @if(item.Score >= 0 && item.Score <= 300)
+                    {
+                        <img style="height:100px;width:100px" src="~/Images/PlatinoLaureado.png"/>
+                    }else if(item.Score >= 300 && item.Score <= 600)
+                    {
+                        <img style="height:100px;width:100px" src="~/Images/Platinox2.png"/>
+                    }
+            </td>
+            <td>
+                
+                <a id="aEdit" asp-action="LogrosPlatinum" asp-route-id="@item.PersonID">Ver logros</a> 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ <div style="padding:50px">
+        <a    href="/Home/Index">Regresar</a>
+    </div>
 </body>
-
-

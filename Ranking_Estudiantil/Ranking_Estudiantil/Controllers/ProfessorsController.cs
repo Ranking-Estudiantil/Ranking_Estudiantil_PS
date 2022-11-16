@@ -22,7 +22,7 @@ namespace Ranking_Estudiantil.Controllers
         // GET: Professors
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Professors.Include(p => p.Person).Include(p => p.career);
+            var applicationDbContext = _context.Professors.Include(p => p.Person);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,7 +36,6 @@ namespace Ranking_Estudiantil.Controllers
 
             var professor = await _context.Professors
                 .Include(p => p.Person)
-                .Include(p => p.career)
                 .FirstOrDefaultAsync(m => m.PersonID == id);
             if (professor == null)
             {
@@ -50,7 +49,6 @@ namespace Ranking_Estudiantil.Controllers
         public IActionResult Create()
         {
             ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName");
-            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName");
             return View();
         }
 
@@ -59,7 +57,7 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonID,CareerID")] Professor professor)
+        public async Task<IActionResult> Create([Bind("PersonID")] Professor professor)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +66,6 @@ namespace Ranking_Estudiantil.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName", professor.PersonID);
-            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", professor.CareerID);
             return View(professor);
         }
 
@@ -86,7 +83,6 @@ namespace Ranking_Estudiantil.Controllers
                 return NotFound();
             }
             ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName", professor.PersonID);
-            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", professor.CareerID);
             return View(professor);
         }
 
@@ -95,7 +91,7 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PersonID,CareerID")] Professor professor)
+        public async Task<IActionResult> Edit(int id, [Bind("PersonID")] Professor professor)
         {
             if (id != professor.PersonID)
             {
@@ -123,7 +119,6 @@ namespace Ranking_Estudiantil.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PersonID"] = new SelectList(_context.People, "PersonID", "FirstName", professor.PersonID);
-            ViewData["CareerID"] = new SelectList(_context.Careers, "CareerID", "CareerName", professor.CareerID);
             return View(professor);
         }
 
@@ -137,7 +132,6 @@ namespace Ranking_Estudiantil.Controllers
 
             var professor = await _context.Professors
                 .Include(p => p.Person)
-                .Include(p => p.career)
                 .FirstOrDefaultAsync(m => m.PersonID == id);
             if (professor == null)
             {

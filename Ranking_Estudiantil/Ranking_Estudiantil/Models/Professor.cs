@@ -8,8 +8,6 @@ namespace Ranking_Estudiantil.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PersonID { get; set; }
-        public int CareerID { get; set; }
-        public Career? career { get; set; }
         public Person? Person { get; set; }
     }
 }

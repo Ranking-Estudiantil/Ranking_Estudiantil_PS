@@ -10,7 +10,10 @@ namespace Ranking_Estudiantil.Models
         [StringLength(50, ErrorMessage = "{0} debe ser minimo de {2} caracteres y maximo {1}", MinimumLength = 3)]
         [Display(Name = "Unidad Academica")]
         public string AcademicUnityName { get; set; } = null!;
-        public ICollection<Faculty>? Faculties { get; set; }
+        public byte Status { get; set; }
+        public DateTime RegisterDate { get; set; }
+        public ICollection<Person>? People { get; set; }
+       
 
     }
 }

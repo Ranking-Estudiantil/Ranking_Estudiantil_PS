@@ -10,8 +10,8 @@ namespace Ranking_Estudiantil.Models
         [StringLength(50, ErrorMessage = "{0} must be: minimum {2} and maximum {1}", MinimumLength = 3)]
         [Display(Name = "Faculty Name")]
         public string FacultyName { get; set; } = null!;
-        public int AcademicUnityID { get; set; }
-        public AcademicUnity? academicUnity { get; set; }
+        public byte Status { get; set; }
+        public DateTime RegisterDate { get; set; }
         public ICollection<Department>? Departments { get; set; }
     }
 }

@@ -9,9 +9,7 @@ namespace Ranking_Estudiantil.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PersonID { get; set; }
         public byte Rank { get; set; }
-        public short Score { get; set; }
-        public int CareerID { get; set; }
-        public Career? career { get; set; }
+        public int Score { get; set; }
         public Person? PeronStud { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Ranking_Estudiantil.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.9")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -34,6 +34,12 @@ namespace Ranking_Estudiantil.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("AcademicUnityID");
 
@@ -55,6 +61,12 @@ namespace Ranking_Estudiantil.Migrations
 
                     b.Property<int>("DepartmentID")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("CareerID");
 
@@ -79,6 +91,12 @@ namespace Ranking_Estudiantil.Migrations
                     b.Property<int>("FacultyID")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("DepartmentID");
 
                     b.HasIndex("FacultyID");
@@ -94,17 +112,18 @@ namespace Ranking_Estudiantil.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FacultyID"), 1L, 1);
 
-                    b.Property<int>("AcademicUnityID")
-                        .HasColumnType("int");
-
                     b.Property<string>("FacultyName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("FacultyID");
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnType("datetime2");
 
-                    b.HasIndex("AcademicUnityID");
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("FacultyID");
 
                     b.ToTable("Faculty", (string)null);
                 });
@@ -116,6 +135,12 @@ namespace Ranking_Estudiantil.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonID"), 1L, 1);
+
+                    b.Property<int>("AcademicUnityID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CareerID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -138,18 +163,26 @@ namespace Ranking_Estudiantil.Migrations
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecondLastName")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<byte>("Status")
                         .HasColumnType("tinyint");
 
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("PersonID");
+
+                    b.HasIndex("AcademicUnityID");
+
+                    b.HasIndex("CareerID");
 
                     b.ToTable("Person", (string)null);
                 });
@@ -159,14 +192,77 @@ namespace Ranking_Estudiantil.Migrations
                     b.Property<int>("PersonID")
                         .HasColumnType("int");
 
-                    b.Property<int>("CareerID")
-                        .HasColumnType("int");
-
                     b.HasKey("PersonID");
 
-                    b.HasIndex("CareerID");
-
                     b.ToTable("Professor", (string)null);
+                });
+
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Projects", b =>
+                {
+                    b.Property<int>("ProjectsID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectsID"), 1L, 1);
+
+                    b.Property<string>("ProjectName")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
+
+                    b.Property<int?>("StudentPersonID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentsID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("achievment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("punctuation")
+                        .HasColumnType("float");
+
+                    b.HasKey("ProjectsID");
+
+                    b.HasIndex("StudentPersonID");
+
+                    b.ToTable("Projects", (string)null);
+                });
+
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Sanctions", b =>
+                {
+                    b.Property<int>("SanctionsID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SanctionsID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<int?>("StudentPersonID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentsID")
+                        .HasColumnType("int");
+
+                    b.Property<double>("punctuation")
+                        .HasColumnType("float");
+
+                    b.HasKey("SanctionsID");
+
+                    b.HasIndex("StudentPersonID");
+
+                    b.ToTable("Sanctions", (string)null);
                 });
 
             modelBuilder.Entity("Ranking_Estudiantil.Models.Student", b =>
@@ -174,18 +270,13 @@ namespace Ranking_Estudiantil.Migrations
                     b.Property<int>("PersonID")
                         .HasColumnType("int");
 
-                    b.Property<int>("CareerID")
-                        .HasColumnType("int");
-
                     b.Property<byte>("Rank")
                         .HasColumnType("tinyint");
 
-                    b.Property<short>("Score")
-                        .HasColumnType("smallint");
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
 
                     b.HasKey("PersonID");
-
-                    b.HasIndex("CareerID");
 
                     b.ToTable("Student", (string)null);
                 });
@@ -212,25 +303,27 @@ namespace Ranking_Estudiantil.Migrations
                     b.Navigation("Faculty");
                 });
 
-            modelBuilder.Entity("Ranking_Estudiantil.Models.Faculty", b =>
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Person", b =>
                 {
                     b.HasOne("Ranking_Estudiantil.Models.AcademicUnity", "academicUnity")
-                        .WithMany("Faculties")
+                        .WithMany("People")
                         .HasForeignKey("AcademicUnityID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("academicUnity");
-                });
-
-            modelBuilder.Entity("Ranking_Estudiantil.Models.Professor", b =>
-                {
                     b.HasOne("Ranking_Estudiantil.Models.Career", "career")
-                        .WithMany()
+                        .WithMany("People")
                         .HasForeignKey("CareerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("academicUnity");
+
+                    b.Navigation("career");
+                });
+
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Professor", b =>
+                {
                     b.HasOne("Ranking_Estudiantil.Models.Person", "Person")
                         .WithOne("professor")
                         .HasForeignKey("Ranking_Estudiantil.Models.Professor", "PersonID")
@@ -238,18 +331,28 @@ namespace Ranking_Estudiantil.Migrations
                         .IsRequired();
 
                     b.Navigation("Person");
+                });
 
-                    b.Navigation("career");
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Projects", b =>
+                {
+                    b.HasOne("Ranking_Estudiantil.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentPersonID");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Ranking_Estudiantil.Models.Sanctions", b =>
+                {
+                    b.HasOne("Ranking_Estudiantil.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentPersonID");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("Ranking_Estudiantil.Models.Student", b =>
                 {
-                    b.HasOne("Ranking_Estudiantil.Models.Career", "career")
-                        .WithMany("Students")
-                        .HasForeignKey("CareerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Ranking_Estudiantil.Models.Person", "PeronStud")
                         .WithOne("student")
                         .HasForeignKey("Ranking_Estudiantil.Models.Student", "PersonID")
@@ -257,18 +360,16 @@ namespace Ranking_Estudiantil.Migrations
                         .IsRequired();
 
                     b.Navigation("PeronStud");
-
-                    b.Navigation("career");
                 });
 
             modelBuilder.Entity("Ranking_Estudiantil.Models.AcademicUnity", b =>
                 {
-                    b.Navigation("Faculties");
+                    b.Navigation("People");
                 });
 
             modelBuilder.Entity("Ranking_Estudiantil.Models.Career", b =>
                 {
-                    b.Navigation("Students");
+                    b.Navigation("People");
                 });
 
             modelBuilder.Entity("Ranking_Estudiantil.Models.Department", b =>

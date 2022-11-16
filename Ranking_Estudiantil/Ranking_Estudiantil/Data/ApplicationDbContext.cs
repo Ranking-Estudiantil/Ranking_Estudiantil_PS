@@ -22,12 +22,16 @@ namespace Ranking_Estudiantil.Data
         public  DbSet<Student> Students { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Professor> Professors { get; set; }
+        public DbSet<Projects> Projectss { get; set; }
+        public DbSet<Sanctions> Sanctionss { get; set; }
+        public DbSet<PersonStudent> personStudents { get; set; }
+        public DbSet<PersonProfessor> PersonProfessors { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Gameficacion2;User Id=sa;password=Univalle;Trusted_Connection=True;MultipleActiveResultSets=true");
+                #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("workstation id=RankingDB.mssql.somee.com;packet size=4096;user id=Nekotina387_SQLLogin_4;pwd=42ahq7uu97;data source=RankingDB.mssql.somee.com;initial catalog=RankingDB");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,12 +43,27 @@ namespace Ranking_Estudiantil.Data
             modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<Person>().ToTable("Person");
             modelBuilder.Entity<Professor>().ToTable("Professor");
-
+            modelBuilder.Entity<Projects>().ToTable("Projects");
+            modelBuilder.Entity<Sanctions>().ToTable("Sanctions");
         }
         public Person ValidarUsuario(string _correo, string _password)
         {
 
-            return People.Where(item => item.Email == _correo && item.Password == _password).FirstOrDefault();
+             Person user= People.Where(item => item.Email == _correo && item.Password == _password).FirstOrDefault();
+            try
+            {
+                SessionClass.Carrera = user.CareerID;
+                SessionClass.unidadAcademica = user.AcademicUnityID;
+                SessionClass.role = user.Role;
+            }catch (Exception ex)
+            {
+                return (user);
+            }
+            
+            return user;
         }
+        public DbSet<Ranking_Estudiantil.Models.PersonStudent> PersonStudent { get; set; }
+        public DbSet<Ranking_Estudiantil.Models.PersonProfessor> PersonProfessor { get; set; }
+       
     }
 }

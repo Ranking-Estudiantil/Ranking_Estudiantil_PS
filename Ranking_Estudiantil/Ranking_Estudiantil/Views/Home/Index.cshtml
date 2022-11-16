@@ -27,11 +27,14 @@
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#we_do" id="font">Información</a>
                                 </li>
-                                 <li class="nav-item active">
-                                    <a class="nav-link" href="~/Edit1/Index" id="font">Editar</a>
-                                </li>
+                                @if (SessionClass.role =="Administrador general" || SessionClass.role =="Director de carrera"  || SessionClass.role =="Docente"  )
+                                {
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="~/Edit1/Index" id="font">Editar</a>
+                                    </li>
+                                }
                             </ul>
-                            <div class="sign_btn"><a href="#">Cerrar Sesion</a></div>
+                            <div class="sign_btn"><a href="~/Login/Logout">Cerrar Sesion</a></div>
                         </div>
                     </nav>
                 </div>

@@ -22,8 +22,7 @@ namespace Ranking_Estudiantil.Controllers
         // GET: Faculties
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Faculties.Include(f => f.academicUnity);
-            return View(await applicationDbContext.ToListAsync());
+              return View(await _context.Faculties.ToListAsync());
         }
 
         // GET: Faculties/Details/5
@@ -35,7 +34,6 @@ namespace Ranking_Estudiantil.Controllers
             }
 
             var faculty = await _context.Faculties
-                .Include(f => f.academicUnity)
                 .FirstOrDefaultAsync(m => m.FacultyID == id);
             if (faculty == null)
             {
@@ -48,7 +46,6 @@ namespace Ranking_Estudiantil.Controllers
         // GET: Faculties/Create
         public IActionResult Create()
         {
-            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FacultyName,AcademicUnityID")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("FacultyID,FacultyName,Status,RegisterDate")] Faculty faculty)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace Ranking_Estudiantil.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", faculty.AcademicUnityID);
             return View(faculty);
         }
 
@@ -82,7 +78,6 @@ namespace Ranking_Estudiantil.Controllers
             {
                 return NotFound();
             }
-            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", faculty.AcademicUnityID);
             return View(faculty);
         }
 
@@ -91,7 +86,7 @@ namespace Ranking_Estudiantil.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FacultyID,FacultyName,AcademicUnityID")] Faculty faculty)
+        public async Task<IActionResult> Edit(int id, [Bind("FacultyID,FacultyName,Status,RegisterDate")] Faculty faculty)
         {
             if (id != faculty.FacultyID)
             {
@@ -118,7 +113,6 @@ namespace Ranking_Estudiantil.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AcademicUnityID"] = new SelectList(_context.AcademicUnities, "AcademicUnityID", "AcademicUnityName", faculty.AcademicUnityID);
             return View(faculty);
         }
 
@@ -131,7 +125,6 @@ namespace Ranking_Estudiantil.Controllers
             }
 
             var faculty = await _context.Faculties
-                .Include(f => f.academicUnity)
                 .FirstOrDefaultAsync(m => m.FacultyID == id);
             if (faculty == null)
             {
