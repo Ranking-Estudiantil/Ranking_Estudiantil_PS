@@ -93,6 +93,10 @@ Lo abrimos y lo ejecutamos no se necesita nada mas para que el proyecto se ejecu
 ![Captura de pantalla (96)](https://user-images.githubusercontent.com/111919106/203798274-ddeeec28-a430-462c-9af7-5df73828b63e.png)
 
 ___
+## Extra
+Aqui se puede cambiar el remitente para el envio de email.
+![Captura de pantalla (1632)](https://user-images.githubusercontent.com/111919106/204071269-5fbd1465-ca85-4f07-a1e7-7917f24483f7.png)
+___
 
 ## Manual basico de uso
 
