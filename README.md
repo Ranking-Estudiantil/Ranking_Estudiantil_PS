@@ -92,3 +92,53 @@ Lo abrimos y lo ejecutamos no se necesita nada mas para que el proyecto se ejecu
 
 ![Captura de pantalla (96)](https://user-images.githubusercontent.com/111919106/203798274-ddeeec28-a430-462c-9af7-5df73828b63e.png)
 
+___
+
+## Manual basico de uso
+
+Para hacer las pruebas y ver que todo funciona entraremos con la cuenta de administrador, esta cuenta no cuenta con las restricciones de otros roles.
+- eza0030709@est.univalle.edu (email)
+- 9994670 (password)
+
+
+En las siguientes imágenes se muestra la ventana del menú principal (una con las restricciones y la otra es el menú del admin que cuenta con la opción editar en la parte izquierda superior).
+
+El menú principal cuenta con una pirámide este es el ranking, cada uno de estos niveles es un botón al que podemos hacer click y entrar al ranking y mas abajo contamos con un sector de información y link de contactos.
+
+![Captura de pantalla (1616)](https://user-images.githubusercontent.com/111919106/204068721-f8d68a03-fc49-40e6-878f-4bf560ca2f74.png)
+
+![Captura de pantalla (1619)](https://user-images.githubusercontent.com/111919106/204068818-4b3de8e2-0e5c-4bb7-a7ce-99d35285abc8.png)
+
+![Captura de pantalla (1617)](https://user-images.githubusercontent.com/111919106/204068833-b1067e60-beaa-46f7-bdea-275c5ed30014.png)
+
+
+Este es el ranking de los estudiantes en la tabla se ve el nombre, apellido paterno, apellido materno, carrera, la puntuación que tiene actualmente y la insignia del rango correspondiente a los puntos también se cuenta con un link que nos lleva a una ventana en donde se muestra los logros del estudiante y se justifica sus puntos.
+
+
+![Captura de pantalla (1620)](https://user-images.githubusercontent.com/111919106/204068846-ed01c7b8-6008-46d5-bc56-59a8db0baa15.png)
+
+
+En esta imagen se muestra la opción de editar que tiene el administrador, aquí es donde registraremos, modificaremos y eliminaremos datos, cada botón cuenta con su crud correspondiente.
+
+
+![Captura de pantalla (1622)](https://user-images.githubusercontent.com/111919106/204068866-08879d79-bcf8-4ff2-b8f3-4096a2209658.png)
+
+Tabla con los registros
+
+![Captura de pantalla (1625)](https://user-images.githubusercontent.com/111919106/204069015-f3b5f3e1-d5cf-4cf1-988e-fa4d232a5d07.png)
+
+Formulario de de registro
+
+![Captura de pantalla (1626)](https://user-images.githubusercontent.com/111919106/204068926-05c39ea9-29d1-41fc-abf9-fa88da7f9c6f.png)
+
+Confirmacion para eliminacion de un dato
+
+![Captura de pantalla (1628)](https://user-images.githubusercontent.com/111919106/204068944-c7df14a2-f245-4da1-80ae-d18b2165218f.png)
+
+Formulario para la edición de un dato
+
+![Captura de pantalla (1627)](https://user-images.githubusercontent.com/111919106/204068938-a008e98e-0081-4770-bf3d-bbac87658ddc.png)
+
+Esta es la ventana para la busqueda y edicion de logros de los estudiantes
+
+![Captura de pantalla (1631)](https://user-images.githubusercontent.com/111919106/204068958-5d7ab478-d73b-47da-ab36-5c0039be5682.png)
