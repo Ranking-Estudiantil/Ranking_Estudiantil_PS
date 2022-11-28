@@ -131,7 +131,7 @@ Tabla con los registros
 
 ![Captura de pantalla (1625)](https://user-images.githubusercontent.com/111919106/204069015-f3b5f3e1-d5cf-4cf1-988e-fa4d232a5d07.png)
 
-Formulario de de registro
+Formulario de registro
 
 ![Captura de pantalla (1626)](https://user-images.githubusercontent.com/111919106/204068926-05c39ea9-29d1-41fc-abf9-fa88da7f9c6f.png)
 
