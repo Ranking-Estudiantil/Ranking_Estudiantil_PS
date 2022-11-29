@@ -93,6 +93,19 @@ Lo abrimos y lo ejecutamos no se necesita nada mas para que el proyecto se ejecu
 ![Captura de pantalla (96)](https://user-images.githubusercontent.com/111919106/203798274-ddeeec28-a430-462c-9af7-5df73828b63e.png)
 
 ___
+## Docker
+
+![Captura de pantalla (1637)](https://user-images.githubusercontent.com/111919106/204457987-cb2513e0-fc9d-4158-a62e-6cd1d275396a.png)
+
+El comando para restaurar tiene el siguiente formato:
+sudo docker load -i ruta/nombrecontainercomprimido.tar
+También es valido:
+sudo docker load  < ruta/nombrecontainercomprimido.tar
+
+Debemos ubicarnos en la directorio que contiene nuestra imagen y  ejecutar:
+
+sudo docker load -i  rankingestudiantil.tar.gz
+___
 ## Extra
 Aqui se puede cambiar el remitente para el envio de email.
 ![Captura de pantalla (1632)](https://user-images.githubusercontent.com/111919106/204071269-5fbd1465-ca85-4f07-a1e7-7917f24483f7.png)
