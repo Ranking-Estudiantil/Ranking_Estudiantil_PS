@@ -130,7 +130,7 @@ ___
 
 Para hacer las pruebas y ver que todo funciona entraremos con la cuenta de administrador, esta cuenta no cuenta con las restricciones de otros roles.
 - eza0030709@est.univalle.edu (email)
-- 9994670 (password)
+- 1899517 (password)
 
 
 En las siguientes imágenes se muestra la ventana del menú principal (una con las restricciones y la otra es el menú del admin que cuenta con la opción editar en la parte izquierda superior).
