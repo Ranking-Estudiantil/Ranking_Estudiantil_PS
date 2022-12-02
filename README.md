@@ -37,6 +37,9 @@ ___
 
 ## URL Hosting y BD
 
+![Captura de pantalla (1641)](https://user-images.githubusercontent.com/111919106/205184172-efe301af-7d94-4f5f-8ff0-9284551532ef.png)
+
+Cadena de conexion: workstation id=RankingDB.mssql.somee.com;packet size=4096;user id=Nekotina387_SQLLogin_4;pwd=42ahq7uu97;data source=RankingDB.mssql.somee.com;persist security info=False;initial catalog=RankingDB 
 ___
 
 ## Herramientas de Implementación 🛠️
@@ -106,6 +109,17 @@ Debemos ubicarnos en la directorio que contiene nuestra imagen y  ejecutar:
 
 sudo docker load -i  rankingestudiantil.tar.gz
 ___
+## Conexión a la base de datos 
+Lo primero que tenemos que hacer es subir una base de Datos vacía a la nube, luego tenemos que extraer la cadena de conexión que se nos muestra en somee. 
+
+![Captura de pantalla (1641)](https://user-images.githubusercontent.com/111919106/205184261-dabccf19-950f-4646-9294-eaa4a4d0783e.png)
+
+Posteriormente añadiremos toda esa cadena a la appsetings.jason de nuestro proyecto como un Default. 
+
+ ![Captura de pantalla (1643)](https://user-images.githubusercontent.com/111919106/205184565-8bfadb05-b229-4f78-bbed-c5f364e60063.png)
+
+Cadena de conexion: workstation id=RankingDB.mssql.somee.com;packet size=4096;user id=Nekotina387_SQLLogin_4;pwd=42ahq7uu97;data source=RankingDB.mssql.somee.com;persist security info=False;initial catalog=RankingDB 
+__
 ## Extra
 Aqui se puede cambiar el remitente para el envio de email.
 ![Captura de pantalla (1632)](https://user-images.githubusercontent.com/111919106/204071269-5fbd1465-ca85-4f07-a1e7-7917f24483f7.png)
