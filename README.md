@@ -52,6 +52,7 @@ ___
 
 ## Diagrama del Sistema
 
+![Diagrama sin título drawio (1)](https://user-images.githubusercontent.com/111919106/205205126-2dc98efe-232d-4653-a32b-2c83732b9f93.png)
 
 ## Manual Paso a Paso
 
