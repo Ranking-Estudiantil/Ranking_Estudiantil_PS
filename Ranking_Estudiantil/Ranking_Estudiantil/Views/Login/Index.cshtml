@@ -1,0 +1,25 @@
+﻿@model Person
+@{
+    
+}
+
+
+
+
+ <body class="body" >
+
+    <div  class="login-box">
+      <img src="~/Images/logoRanking.png" class="avatar" alt="Avatar Image">
+      <h1>Sesion</h1>
+       <form asp-controller="Login" asp-action="Index" method="POST">
+        <label for="username">Correo</label>
+       <input type="text" name="Email" asp-for="Email" placeholder="Correo electronico"/>
+        <label for="password">Contrasena</label>
+        <input type="password" name="password" asp-for="Password" placeholder="Contrasena" />
+         <input class="btn btn-primary btn-lg btn-block" type="submit" value="Login"/>
+        <a id="as" href="">Ve por todo!</a><br>
+       @ViewData["Message1"]
+       @ViewData["Message"]
+      </form>
+    </div>
+  </body>
